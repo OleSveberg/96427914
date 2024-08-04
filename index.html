@@ -17,49 +17,59 @@
 
         img {
             display: block;
-            position: relative;
+            
             width: auto;
-        }
-
-        span {
-            margin-right: 12px;
+            height: auto;
+            max-width: 90vw;
+            max-height: 80vh;
         }
 
         #fg1 {
+            position: absolute;
+            top: 0;
             filter: hue-rotate(175deg) contrast(0.9) brightness(0.6);
         }
         #fg2 {
+            position: absolute;
+            top: 0;
             filter: hue-rotate(20deg) contrast(0.3) brightness(1.5) saturate(0.5);
         }
 
-        #images {
+        #content {
             display: flex;
-            background-image: url("image0000011.png");
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-width: 100vw;
-            height: 100vh;
-            max-height: 60vh;
-            max-width: 80vw;
-            
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #images {
+            position: relative;
         }
 
         #input {
             display: flex;
             margin: 16px;
+            width: 240px;
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
-    <div id="images">
-        <!--img src="image0000012.png" id="fg1">
-        <img src="image0000013.png" id="fg2"-->
-    </div>
-
-    <div id="input">
-        <input type="checkbox" id="trapp" onclick="update()" checked><span>Blå trapper</span>
-        <input type="checkbox" id="stolpe" onclick="update()" checked><span>Hvite stolper</span>
+    <div id="content">
+        <div id="images">
+            <img src="image0000011.png" id="bg">
+            <img src="image0000012.png" id="fg1">
+            <img src="image0000013.png" id="fg2">
+        </div>
+    
+        <div id="input">
+            <div>
+                <input type="checkbox" id="trapp" onclick="update()" checked><span>Blå trapper</span>
+            </div>
+            <div>
+                <input type="checkbox" id="stolpe" onclick="update()" checked><span>Hvite stolper</span>
+            </div>
+        </div>
     </div>
 
     <script>
