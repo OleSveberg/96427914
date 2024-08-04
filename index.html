@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
         img {
             display: block;
-            position: absolute;
-            top: 64px;
-            left: 8px;
-            height: auto;
-            width: calc(100% - 16px);
+            position: relative;
+            width: auto;
         }
 
         span {
@@ -25,20 +32,34 @@
             filter: hue-rotate(20deg) contrast(0.3) brightness(1.5) saturate(0.5);
         }
 
+        #images {
+            display: flex;
+            background-image: url("image0000011.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-width: 100vw;
+            height: 100vh;
+            max-height: 80vh;
+            max-width: 80vw;
+            
+        }
+
         #input {
+            display: flex;
+            margin: 16px;
         }
     </style>
 </head>
 <body>
     <div id="images">
-        <img src="image0000011.png" id="bg">
-        <img src="image0000012.png" id="fg1">
-        <img src="image0000013.png" id="fg2">
+        <!--img src="image0000012.png" id="fg1">
+        <img src="image0000013.png" id="fg2"-->
     </div>
 
     <div id="input">
         <input type="checkbox" id="trapp" onclick="update()" checked><span>Blå trapper</span>
-        <input type="checkbox" id="stolpe" onclick="update()"><span>Hvite stolper</span>
+        <input type="checkbox" id="stolpe" onclick="update()" checked><span>Hvite stolper</span>
     </div>
 
     <script>
