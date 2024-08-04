@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+            position: absolute;
+            top: 32px;
+            left: 8px;
+            height: auto;
+            width: auto;
+        }
+
+        span {
+            margin-right: 12px;
+        }
+
+        #fg1 {
+            filter: hue-rotate(175deg) contrast(0.9) brightness(0.6);
+        }
+        #fg2 {
+            filter: hue-rotate(20deg) contrast(0.3) brightness(1.5) saturate(0.5);
+        }
+
+        #input {
+        }
+    </style>
+</head>
+<body>
+    <div id="images">
+        <img src="image0000011.png" id="bg">
+        <img src="image0000012.png" id="fg1">
+        <img src="image0000013.png" id="fg2">
+    </div>
+
+    <div id="input">
+        <input type="checkbox" id="trapp" onclick="update()" checked><span>Blå trapper</span>
+        <input type="checkbox" id="stolpe" onclick="update()"><span>Hvite stolper</span>
+    </div>
+
+    <script>
+        const fg1 = document.getElementById("fg1").style
+        const fg2 = document.getElementById("fg2").style
+        const trapp = document.getElementById("trapp")
+        const stolpe = document.getElementById("stolpe")
+
+        update()
+
+        function update() {
+            if(trapp.checked) fg1.visibility = "visible"
+            else fg1.visibility = "hidden"
+
+            if(stolpe.checked) fg2.visibility = "visible"
+            else fg2.visibility = "hidden"
+        }
+    </script>
+</body>
+</html>
